@@ -1,6 +1,6 @@
 import Box from '@mui/material/Box';
-import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
+import Link from '@mui/material/Link';
 import Divider from '@mui/material/Divider';
 import { styled } from '@mui/material/styles';
 import Container from '@mui/material/Container';
@@ -10,7 +10,7 @@ import Typography from '@mui/material/Typography';
 import { paths } from 'src/routes/paths';
 import { RouterLink } from 'src/routes/components';
 
-import { _socials } from 'src/_mock';
+import { PORTFOLIO_PROFILE, PORTFOLIO_SOCIALS } from 'src/_mock/_portfolio';
 
 import { Logo } from 'src/components/logo';
 import { Iconify } from 'src/components/iconify';
@@ -19,21 +19,23 @@ import { Iconify } from 'src/components/iconify';
 
 const LINKS = [
   {
-    headline: 'Minimal',
+    headline: 'Navigation',
     children: [
-      { name: 'About us', href: paths.about },
-      { name: 'Contact us', href: paths.contact },
-      { name: 'FAQs', href: paths.faqs },
+      { name: 'Home', href: '/' },
+      { name: 'About', href: paths.about },
+      { name: 'Projects', href: paths.projects },
+      { name: 'Blog', href: paths.post.root },
+      { name: 'Contact', href: paths.contact },
     ],
   },
   {
-    headline: 'Legal',
-    children: [
-      { name: 'Terms and condition', href: '#' },
-      { name: 'Privacy policy', href: '#' },
-    ],
+    headline: 'Connect',
+    children: PORTFOLIO_SOCIALS.map((social) => ({
+      name: social.label,
+      href: social.path,
+    })),
   },
-  { headline: 'Contact', children: [{ name: 'support@minimals.cc', href: '#' }] },
+  { headline: 'Contact', children: [{ name: PORTFOLIO_PROFILE.email, href: `mailto:${PORTFOLIO_PROFILE.email}` }] },
 ];
 
 // ----------------------------------------------------------------------
@@ -77,8 +79,7 @@ export function Footer({ sx, layoutQuery = 'md', ...other }) {
                 [theme.breakpoints.up(layoutQuery)]: { mx: 'unset' },
               })}
             >
-              The starting point for your next project with Minimal UI Kit, built on the newest
-              version of Material-UI ©, ready to be customized to your style.
+              {PORTFOLIO_PROFILE.tagline}
             </Typography>
 
             <Box
@@ -90,12 +91,9 @@ export function Footer({ sx, layoutQuery = 'md', ...other }) {
                 [theme.breakpoints.up(layoutQuery)]: { mb: 0, justifyContent: 'flex-start' },
               })}
             >
-              {_socials.map((social) => (
-                <IconButton key={social.label}>
-                  {social.value === 'twitter' && <Iconify icon="socials:twitter" />}
-                  {social.value === 'facebook' && <Iconify icon="socials:facebook" />}
-                  {social.value === 'instagram' && <Iconify icon="socials:instagram" />}
-                  {social.value === 'linkedin' && <Iconify icon="socials:linkedin" />}
+              {PORTFOLIO_SOCIALS.map((social) => (
+                <IconButton key={social.label} component="a" href={social.path} target="_blank" rel="noopener noreferrer">
+                  <Iconify icon={social.icon} />
                 </IconButton>
               ))}
             </Box>
@@ -126,17 +124,22 @@ export function Footer({ sx, layoutQuery = 'md', ...other }) {
                     {list.headline}
                   </Typography>
 
-                  {list.children.map((link) => (
-                    <Link
-                      key={link.name}
-                      component={RouterLink}
-                      href={link.href}
-                      color="inherit"
-                      variant="body2"
-                    >
-                      {link.name}
-                    </Link>
-                  ))}
+                  {list.children.map((link) => {
+                    const isExternal = link.href.startsWith('http') || link.href.startsWith('mailto:');
+
+                    return (
+                      <Link
+                        key={link.name}
+                        component={isExternal ? 'a' : RouterLink}
+                        href={link.href}
+                        color="inherit"
+                        variant="body2"
+                        {...(isExternal && { target: '_blank', rel: 'noopener noreferrer' })}
+                      >
+                        {link.name}
+                      </Link>
+                    );
+                  })}
                 </Box>
               ))}
             </Box>
@@ -144,7 +147,7 @@ export function Footer({ sx, layoutQuery = 'md', ...other }) {
         </Grid>
 
         <Typography variant="body2" sx={{ mt: 10 }}>
-          © All rights reserved.
+          © {new Date().getFullYear()} {PORTFOLIO_PROFILE.name}. All rights reserved.
         </Typography>
       </Container>
     </FooterRoot>
@@ -168,9 +171,7 @@ export function HomeFooter({ sx, ...other }) {
       <Container>
         <Logo />
         <Box sx={{ mt: 1, typography: 'caption' }}>
-          © All rights reserved.
-          <br /> made by
-          <Link href="https://minimals.cc/"> minimals.cc </Link>
+          © {new Date().getFullYear()} {PORTFOLIO_PROFILE.name}. All rights reserved.
         </Box>
       </Container>
     </FooterRoot>

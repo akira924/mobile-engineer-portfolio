@@ -43,7 +43,7 @@ export function ContactHero({ sx, ...other }) {
           <AnimateText
             component="h1"
             variant="h1"
-            textContent={['Where', 'to find us?']}
+            textContent={['Get in', 'touch']}
             variants={varFade('inUp', { distance: 24 })}
             sx={{
               color: 'common.white',
