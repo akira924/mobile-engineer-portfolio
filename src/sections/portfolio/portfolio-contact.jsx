@@ -111,7 +111,8 @@ export function PortfolioContact({ sx, ...other }) {
 
                 <Button
                   component="a"
-                  href={`mailto:${PORTFOLIO_PROFILE.email}`}
+                  href={PORTFOLIO_PROFILE.resumeUrl}
+                  download
                   size="large"
                   variant="outlined"
                   sx={{ color: 'common.white', borderColor: 'grey.700' }}
