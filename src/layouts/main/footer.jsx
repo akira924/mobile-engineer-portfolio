@@ -10,7 +10,7 @@ import Typography from '@mui/material/Typography';
 import { paths } from 'src/routes/paths';
 import { RouterLink } from 'src/routes/components';
 
-import { PORTFOLIO_PROFILE, PORTFOLIO_SOCIALS } from 'src/_mock/_portfolio';
+import { PORTFOLIO_PROFILE, PORTFOLIO_SOCIALS, PORTFOLIO_CONTACT_ITEMS } from 'src/_mock/_portfolio';
 
 import { Logo } from 'src/components/logo';
 import { Iconify } from 'src/components/iconify';
@@ -35,7 +35,13 @@ const LINKS = [
       href: social.path,
     })),
   },
-  { headline: 'Contact', children: [{ name: PORTFOLIO_PROFILE.email, href: `mailto:${PORTFOLIO_PROFILE.email}` }] },
+  {
+    headline: 'Contact',
+    children: PORTFOLIO_CONTACT_ITEMS.map((item) => ({
+      name: item.value,
+      href: item.href,
+    })),
+  },
 ];
 
 // ----------------------------------------------------------------------
@@ -125,7 +131,10 @@ export function Footer({ sx, layoutQuery = 'md', ...other }) {
                   </Typography>
 
                   {list.children.map((link) => {
-                    const isExternal = link.href.startsWith('http') || link.href.startsWith('mailto:');
+                    const isExternal =
+                      link.href.startsWith('http') ||
+                      link.href.startsWith('mailto:') ||
+                      link.href.startsWith('tel:');
 
                     return (
                       <Link

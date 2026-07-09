@@ -1,7 +1,7 @@
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 
-import { _mapContact } from 'src/_mock';
+import { PORTFOLIO_MAP_CONTACT } from 'src/_mock/_portfolio';
 
 import { ContactMap } from '../contact-map';
 import { ContactHero } from '../contact-hero';
@@ -23,7 +23,7 @@ export function ContactView() {
         >
           <ContactForm />
 
-          <ContactMap contacts={_mapContact} />
+          <ContactMap contacts={PORTFOLIO_MAP_CONTACT} />
         </Box>
       </Container>
     </>

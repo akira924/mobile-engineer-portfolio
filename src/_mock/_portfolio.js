@@ -10,6 +10,8 @@ export const PORTFOLIO_PROFILE = {
   location: 'Round Rock, TX',
   email: 'huangivk@gmail.com',
   phone: '+1 (555) 123-4567',
+  address: '3503 Laurel Bay Loop, Round Rock, TX 78681',
+  website: 'https://ivankh.netlify.app/',
   resumeUrl: '/Ivan_Huang_FlowCV_Resume_2026-07-08.pdf',
   availability: 'Open to remote freelance & full-time roles',
   stats: [
@@ -291,6 +293,44 @@ export const PORTFOLIO_FAQS = [
 // ----------------------------------------------------------------------
 
 export const PORTFOLIO_SOCIALS = [
+  { value: 'website', label: 'Website', path: 'https://ivankh.netlify.app/', icon: 'solar:global-bold' },
   { value: 'github', label: 'GitHub', path: 'https://github.com', icon: 'mdi:github' },
   { value: 'linkedin', label: 'LinkedIn', path: 'https://linkedin.com', icon: 'mdi:linkedin' },
+];
+
+// ----------------------------------------------------------------------
+
+export const PORTFOLIO_CONTACT_ITEMS = [
+  {
+    label: 'Email',
+    value: PORTFOLIO_PROFILE.email,
+    href: `mailto:${PORTFOLIO_PROFILE.email}`,
+    icon: 'solar:letter-bold',
+  },
+  {
+    label: 'Phone',
+    value: PORTFOLIO_PROFILE.phone,
+    href: `tel:${PORTFOLIO_PROFILE.phone.replace(/[^\d+]/g, '')}`,
+    icon: 'solar:phone-bold',
+  },
+  {
+    label: 'Address',
+    value: PORTFOLIO_PROFILE.address,
+    href: `https://maps.google.com/?q=${encodeURIComponent(PORTFOLIO_PROFILE.address)}`,
+    icon: 'mingcute:location-fill',
+  },
+  {
+    label: 'Website',
+    value: PORTFOLIO_PROFILE.website.replace(/^https?:\/\//, ''),
+    href: PORTFOLIO_PROFILE.website,
+    icon: 'solar:global-bold',
+  },
+];
+
+export const PORTFOLIO_MAP_CONTACT = [
+  {
+    latlng: [30.532, -97.654],
+    address: PORTFOLIO_PROFILE.address,
+    phoneNumber: PORTFOLIO_PROFILE.phone,
+  },
 ];

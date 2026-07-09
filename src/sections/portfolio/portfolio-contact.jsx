@@ -10,7 +10,7 @@ import { paths } from 'src/routes/paths';
 import { RouterLink } from 'src/routes/components';
 
 import { CONFIG } from 'src/global-config';
-import { PORTFOLIO_PROFILE } from 'src/_mock/_portfolio';
+import { PORTFOLIO_PROFILE, PORTFOLIO_CONTACT_ITEMS } from 'src/_mock/_portfolio';
 
 import { Iconify } from 'src/components/iconify';
 import { varFade, MotionViewport } from 'src/components/animate';
@@ -90,6 +90,37 @@ export function PortfolioContact({ sx, ...other }) {
                 {PORTFOLIO_PROFILE.availability}. Reach out to discuss your mobile product, timeline,
                 and how I can help.
               </Box>
+
+              <Stack
+                component={m.div}
+                variants={varFade('inDown', { distance: 24 })}
+                spacing={1}
+                sx={{ color: 'grey.500' }}
+              >
+                {PORTFOLIO_CONTACT_ITEMS.map((item) => (
+                  <Box
+                    key={item.label}
+                    component="a"
+                    href={item.href}
+                    target={item.label === 'Website' || item.label === 'Address' ? '_blank' : undefined}
+                    rel={
+                      item.label === 'Website' || item.label === 'Address' ? 'noopener noreferrer' : undefined
+                    }
+                    sx={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: 1,
+                      color: 'inherit',
+                      typography: 'body2',
+                      textDecoration: 'none',
+                      '&:hover': { color: 'common.white' },
+                    }}
+                  >
+                    <Iconify icon={item.icon} width={18} />
+                    {item.value}
+                  </Box>
+                ))}
+              </Stack>
 
               <Stack
                 component={m.div}

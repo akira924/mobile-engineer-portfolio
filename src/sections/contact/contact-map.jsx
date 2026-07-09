@@ -19,10 +19,16 @@ export function ContactMap({ contacts, sx }) {
 
   const { selectedItem, onOpenPopup, onClosePopup } = useMapMarkerPopup();
 
+  const primaryContact = contacts[0];
+
   return (
     <Map
       mapStyle={lightMode ? MAP_STYLES.light : MAP_STYLES.dark}
-      initialViewState={{ latitude: 12, longitude: 42, zoom: 2 }}
+      initialViewState={{
+        latitude: primaryContact?.latlng[0] ?? 30.532,
+        longitude: primaryContact?.latlng[1] ?? -97.654,
+        zoom: 12,
+      }}
       sx={[{ borderRadius: 1.5, height: { xs: 320, md: 560 } }, ...(Array.isArray(sx) ? sx : [sx])]}
     >
       <MapControls hideGeolocate />
