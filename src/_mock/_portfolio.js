@@ -11,7 +11,7 @@ export const PORTFOLIO_PROFILE = {
     'Designing and deploying scalable cross-platform apps across web, iOS, and Android with React Native, TypeScript, and native SDKs.',
   location: 'Round Rock, TX',
   email: 'huangivk@gmail.com',
-  phone: '+1 (555) 123-4567',
+  phone: '+1 (512) 553-5463',
   address: '3503 Laurel Bay Loop, Round Rock, TX 78681',
   website: 'https://ivankh.netlify.app/',
   resumeUrl: '/Ivan_Huang_Resume.pdf',
