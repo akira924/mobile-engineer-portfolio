@@ -40,11 +40,6 @@ export const paths = {
     details: (id) => `/product/${id}`,
     demo: { details: `/product/${MOCK_ID}` },
   },
-  post: {
-    root: `/post`,
-    details: (title) => `/post/${kebabCase(title)}`,
-    demo: { details: `/post/${kebabCase(MOCK_TITLE)}` },
-  },
   // AUTH
   auth: {
     amplify: {

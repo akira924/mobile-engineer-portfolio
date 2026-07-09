@@ -17,11 +17,6 @@ export const navData = [
     icon: <Iconify width={22} icon="solar:smartphone-2-bold-duotone" />,
   },
   {
-    title: 'Blog',
-    path: paths.post.root,
-    icon: <Iconify width={22} icon="solar:document-text-bold-duotone" />,
-  },
-  {
     title: 'Contact',
     path: paths.contact,
     icon: <Iconify width={22} icon="solar:letter-bold-duotone" />,

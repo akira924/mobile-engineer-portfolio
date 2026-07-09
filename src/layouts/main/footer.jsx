@@ -24,7 +24,6 @@ const LINKS = [
       { name: 'Home', href: '/' },
       { name: 'About', href: paths.about },
       { name: 'Projects', href: paths.projects },
-      { name: 'Blog', href: paths.post.root },
       { name: 'Contact', href: paths.contact },
     ],
   },

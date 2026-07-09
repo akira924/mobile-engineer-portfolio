@@ -81,7 +81,6 @@ export function PostDetailsView({ post, loading, error }) {
         <PostDetailsToolbar
           backHref={paths.dashboard.post.root}
           editHref={paths.dashboard.post.edit(`${post?.title}`)}
-          liveHref={paths.post.details(`${post?.title}`)}
           publish={`${publish}`}
           onChangePublish={handleChangePublish}
           publishOptions={POST_PUBLISH_OPTIONS}
