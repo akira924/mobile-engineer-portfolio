@@ -8,6 +8,9 @@ import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import LinearProgress from '@mui/material/LinearProgress';
 
+import { paths } from 'src/routes/paths';
+import { RouterLink } from 'src/routes/components';
+
 import { fPercent } from 'src/utils/format-number';
 
 import { CONFIG } from 'src/global-config';
@@ -126,16 +129,18 @@ export function AboutWhat({ sx, ...other }) {
               ))}
             </Box>
 
-            <Button
-              component={m.button}
-              variants={varFade('inRight')}
-              variant="outlined"
-              color="inherit"
-              size="large"
-              endIcon={<Iconify icon="eva:arrow-ios-forward-fill" />}
-            >
-              Our work
-            </Button>
+            <m.div variants={varFade('inRight')}>
+              <Button
+                component={RouterLink}
+                href={paths.projects}
+                variant="outlined"
+                color="inherit"
+                size="large"
+                endIcon={<Iconify icon="eva:arrow-ios-forward-fill" />}
+              >
+                View projects
+              </Button>
+            </m.div>
           </Grid>
         </Grid>
       </Container>
@@ -145,7 +150,8 @@ export function AboutWhat({ sx, ...other }) {
 
 // ----------------------------------------------------------------------
 
-const SKILLS = Array.from({ length: 3 }, (_, index) => ({
-  value: [20, 40, 60][index],
-  label: ['Development', 'Design', 'Marketing'][index],
-}));
+const SKILLS = [
+  { label: 'Mobile & Cross-Platform', value: 94 },
+  { label: 'Backend & API Integration', value: 86 },
+  { label: 'CI/CD & App Store Delivery', value: 82 },
+];

@@ -144,7 +144,7 @@ export function PortfolioHero({ sx, ...other }) {
       <m.div {...motionProps}>
         <Button
           component={RouterLink}
-          href="projects"
+          href={paths.projects}
           color="inherit"
           size="large"
           variant="contained"
