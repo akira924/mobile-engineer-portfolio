@@ -68,7 +68,7 @@ export function PortfolioProjects({ sx, ...other }) {
               variant="outlined"
               endIcon={<Iconify icon="eva:arrow-forward-fill" />}
             >
-              View all projects
+              View my projects
             </Button>
           </Stack>
         </Container>

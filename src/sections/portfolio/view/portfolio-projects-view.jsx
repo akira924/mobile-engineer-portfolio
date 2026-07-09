@@ -21,7 +21,7 @@ export function PortfolioProjectsView() {
   return (
     <Container component={MotionViewport} sx={{ py: { xs: 8, md: 12 } }}>
       <Stack spacing={1} sx={{ mb: { xs: 5, md: 8 } }}>
-        <Typography variant="h2">All projects</Typography>
+        <Typography variant="h2">My projects</Typography>
         <Typography sx={{ color: 'text.secondary', maxWidth: 640 }}>
           Mobile applications across health, fintech, travel, and productivity — built for iOS,
           Android, and cross-platform.
