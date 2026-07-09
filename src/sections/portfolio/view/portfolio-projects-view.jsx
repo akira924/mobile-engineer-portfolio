@@ -13,6 +13,7 @@ import { PORTFOLIO_PROJECTS } from 'src/_mock/_portfolio';
 
 import { Image } from 'src/components/image';
 import { Label } from 'src/components/label';
+import { Iconify } from 'src/components/iconify';
 import { varFade, MotionViewport } from 'src/components/animate';
 
 // ----------------------------------------------------------------------
@@ -87,21 +88,25 @@ function ProjectCard({ project }) {
         <Stack direction="row" spacing={1.5} sx={{ pt: 1, flexWrap: 'wrap', gap: 1 }}>
           {links.appStore && (
             <Link href={links.appStore} target="_blank" rel="noopener" color="inherit" variant="body2">
+              <Iconify icon="logos:apple-app-store" width={20} sx={{ mr: 0.5, verticalAlign: 'middle' }} />
               App Store
             </Link>
           )}
           {links.playStore && (
             <Link href={links.playStore} target="_blank" rel="noopener" color="inherit" variant="body2">
+              <Iconify icon="logos:google-play-icon" width={20} sx={{ mr: 0.5, verticalAlign: 'middle' }} />
               Play Store
             </Link>
           )}
           {links.github && (
             <Link href={links.github} target="_blank" rel="noopener" color="inherit" variant="body2">
+              <Iconify icon="mdi:github" width={20} sx={{ mr: 0.5, verticalAlign: 'middle' }} />
               GitHub
             </Link>
           )}
           {links.web && (
             <Link href={links.web} target="_blank" rel="noopener" color="inherit" variant="body2">
+              <Iconify icon="solar:global-bold" width={20} sx={{ mr: 0.5, verticalAlign: 'middle' }} />
               Website
             </Link>
           )}

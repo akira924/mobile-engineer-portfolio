@@ -44,7 +44,7 @@ export const mainRoutes = [
           </MainLayout>
         ),
         children: [
-          { path: 'about-us', element: <AboutPage /> },
+          { path: 'about-me', element: <AboutPage /> },
           { path: 'contact-us', element: <ContactPage /> },
           { path: 'projects', element: <ProjectsPage /> },
           { path: 'faqs', element: <FaqsPage /> },
