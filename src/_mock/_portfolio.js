@@ -3,11 +3,11 @@ import { _mock } from './_mock';
 // ----------------------------------------------------------------------
 
 export const PORTFOLIO_PROFILE = {
-  name: 'Alex Morgan',
+  name: 'Ivan Huang',
   role: 'Senior Mobile Engineer',
   tagline: 'Crafting polished iOS & Android apps with React Native and native SDKs.',
   location: 'San Francisco, CA',
-  email: 'alex.morgan@email.com',
+  email: 'huangivk@gmail.com',
   availability: 'Open to freelance & full-time roles',
   stats: [
     { label: 'Years experience', value: 8 },
@@ -192,7 +192,7 @@ export const PORTFOLIO_TESTIMONIALS = [
     avatar: _mock.image.avatar(1),
     rating: 5,
     content:
-      'Alex consistently delivers production-ready mobile features ahead of schedule. Our App Store ratings jumped after the performance overhaul.',
+      'Ivan consistently delivers production-ready mobile features ahead of schedule. Our App Store ratings jumped after the performance overhaul.',
     postedAt: 'March 12, 2025',
   },
   {
