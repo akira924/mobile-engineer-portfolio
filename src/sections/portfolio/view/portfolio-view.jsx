@@ -8,6 +8,7 @@ import { PortfolioFaqs } from '../portfolio-faqs';
 import { PortfolioAbout } from '../portfolio-about';
 import { PortfolioContact } from '../portfolio-contact';
 import { PortfolioProjects } from '../portfolio-projects';
+import { PortfolioEducation } from '../portfolio-education';
 import { PortfolioTechStack } from '../portfolio-tech-stack';
 import { PortfolioExperience } from '../portfolio-experience';
 import { PortfolioTestimonials } from '../portfolio-testimonials';
@@ -33,6 +34,7 @@ export function PortfolioView() {
         <PortfolioAbout />
         <PortfolioProjects />
         <PortfolioExperience />
+        <PortfolioEducation />
         <PortfolioTechStack />
         <PortfolioTestimonials />
         <PortfolioFaqs />

@@ -1,3 +1,5 @@
+import { CONFIG } from 'src/global-config';
+
 import { _mock } from './_mock';
 
 // ----------------------------------------------------------------------
@@ -12,11 +14,11 @@ export const PORTFOLIO_PROFILE = {
   phone: '+1 (555) 123-4567',
   address: '3503 Laurel Bay Loop, Round Rock, TX 78681',
   website: 'https://ivankh.netlify.app/',
-  resumeUrl: '/Ivan_Huang_FlowCV_Resume_2026-07-08.pdf',
+  resumeUrl: '/Ivan_Huang_Resume.pdf',
   availability: 'Open to remote freelance & full-time roles',
   stats: [
     { label: 'Years experience', value: 12 },
-    { label: 'Production apps', value: 4 },
+    { label: 'Production apps', value: 9 },
     { label: 'Companies', value: 5 },
   ],
   quote:
@@ -84,24 +86,24 @@ export const PORTFOLIO_TECH_STACK = [
 export const PORTFOLIO_PROJECTS = [
   {
     id: _mock.id(1),
-    title: 'Fruit Street Health',
-    category: 'Health & Remote Care',
-    description:
-      'Virtual diabetes prevention program with class enrollment, food logging, coaching workflows, Fitbit/BLE device sync, and secure dietitian messaging.',
-    coverUrl: `${_mock.image.cover(1)}`,
-    tech: ['React Native', 'Expo EAS', 'TypeScript', 'Redux Toolkit', 'Swift', 'Kotlin'],
-    links: { appStore: '#', playStore: '#' },
-    featured: true,
-  },
-  {
-    id: _mock.id(2),
     title: 'ReBet',
     category: 'Social Sports & Casino',
     description:
       'Real-time social sports betting app with live game tracking, social feed, in-app wallet, and instant updates via WebSockets and push notifications.',
-    coverUrl: `${_mock.image.cover(2)}`,
+    coverUrl: `${CONFIG.assetsDir}/assets/images/home/home-project1.webp`,
     tech: ['React Native', 'TypeScript', 'GraphQL', 'WebSockets', 'Firebase'],
-    links: { appStore: '#', playStore: '#' },
+    links: { appStore: 'https://apps.apple.com/us/app/rebet-social-sports-casino/id6468762763', playStore: 'https://play.google.com/store/apps/details?id=com.rebet.android_frontend' },
+    featured: true,
+  },
+  {
+    id: _mock.id(2),
+    title: 'Fruit Street Health',
+    category: 'Health & Remote Care',
+    description:
+      'Virtual diabetes prevention program with class enrollment, food logging, coaching workflows, Fitbit/BLE device sync, and secure dietitian messaging.',
+    coverUrl: `${CONFIG.assetsDir}/assets/images/home/home-project2.webp`,
+    tech: ['React Native', 'Expo EAS', 'TypeScript', 'Redux Toolkit', 'Swift', 'Kotlin'],
+    links: { appStore: 'https://apps.apple.com/us/app/fruit-street-health/id6593661510', playStore: 'https://play.google.com/store/apps/details?id=com.fruitstreet.clinic' },
     featured: true,
   },
   {
@@ -110,9 +112,9 @@ export const PORTFOLIO_PROJECTS = [
     category: 'Food & E-commerce',
     description:
       'Consumer food ordering experience with real-time order tracking, in-app payments, and migration of legacy native modules into a unified React Native codebase.',
-    coverUrl: `${_mock.image.cover(3)}`,
+    coverUrl: `${CONFIG.assetsDir}/assets/images/home/home-project3.webp`,
     tech: ['React Native', 'TypeScript', 'Redux', 'Stripe', 'FCM'],
-    links: { appStore: '#', playStore: '#' },
+    links: { appStore: 'https://apps.apple.com/us/app/chownow-local-food-ordering/id1210943577', playStore: 'https://play.google.com/store/apps/details?id=com.chownow.discover' },
     featured: true,
   },
   {
@@ -212,6 +214,40 @@ export const PORTFOLIO_EXPERIENCE = [
       'Developed client web apps with responsive UIs, REST APIs, Stripe payments, and WordPress/Shopify customizations for remote US-based clients.',
     color: 'secondary',
     icon: 'solar:laptop-bold',
+  },
+];
+
+// ----------------------------------------------------------------------
+
+export const PORTFOLIO_EDUCATION = [
+  {
+    id: _mock.id(1),
+    degree: 'Master of Science (MS), Computer Science',
+    school: 'The University of Texas at Arlington',
+    period: '2016 — 2018',
+    location: 'Arlington, TX',
+    color: 'primary',
+    icon: 'solar:square-academic-cap-bold',
+  },
+  {
+    id: _mock.id(2),
+    degree: 'Bachelor of Science (BS), Mathematics',
+    school: 'Rice University',
+    period: '2009 — 2013',
+    location: 'Houston, TX',
+    color: 'info',
+    icon: 'solar:square-academic-cap-bold',
+  },
+];
+
+export const PORTFOLIO_CERTIFICATIONS = [
+  {
+    id: _mock.id(1),
+    title: 'Neural Networks and Deep Learning',
+    issuer: 'DeepLearning.AI',
+    issuedAt: 'Dec 2024',
+    color: 'warning',
+    icon: 'solar:diploma-verified-bold',
   },
 ];
 
